@@ -1,9 +1,9 @@
 """ a tree """
 
 class Node:
-    def __init__(self, data, children=None):
+    def __init__(self, data, children=[]):
         self.data = data
-        self.children = children or []
+        self.children = children
 
     def __repr__(self):
         return f'Node {self.data}'
@@ -68,7 +68,7 @@ cherry = Node('cherry')
 durian = Node('durian')
 elderberry = Node('elderberry')
 fig = Node('fig')
-
+papaya = Node('papaya')
 NT = Tree(apple)
 
 apple.add_child(banana)
@@ -76,10 +76,14 @@ apple.add_child(cherry)
 banana.add_child(durian)
 durian.add_child(elderberry)
 cherry.add_child(fig)
+cherry.add_child(papaya)
 
 
 
 #             apple
+#              /   \
 #         banana  cherry
-#     durian          fig
+#          /       /   \
+#     durian     fig   papaya
+#        /
 # elderberry
